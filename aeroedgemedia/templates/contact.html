@@ -1,0 +1,207 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Aero Edge Media</title>
+    <link rel="stylesheet" href="{% static 'myapp/css/style.css' %}">
+    <link rel="icon" href="{% static 'myapp/images/favicon.png' %}">
+</head>
+<body>
+    
+    <!-- Section Header -->
+    <header>
+        <!-- Section Navbar -->
+         {% include 'header.html' %}
+        <div id="header"></div>
+    </header>
+
+    <!-- Section Content Edit -->
+    <aside>
+        <div id="edit-sidebar"></div>
+    </aside>
+
+    <!-- Section Sidebar -->
+    <aside>
+        {% include 'sidebar.html' %}
+        <div id="sidebar"></div>
+    </aside>
+
+    <!-- Section Main Content -->
+    <main>
+        <!-- Section Banner -->
+        <div class="section-banner">
+            <div class="banner-layout-wrapper">
+                <div class="banner-layout">
+                    <div class="d-flex flex-column text-center align-items-center gspace-2">
+                        <h2 class="title-heading animate-box animated animate__animated" data-animate="animate__fadeInRight">Contact Us</h2>
+                        <nav class="breadcrumb">
+                            <a href="{% url 'home' %}" class="gspace-2">Home</a>
+                            <span class="separator-link">/</span>
+                            <p class="current-page">Contact Us</p>
+                        </nav>    
+                    </div>
+                    <div class="spacer"></div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Section Contact -->
+        <div class="section">
+            <div class="hero-container">
+                <div class="row row-cols-xl-2 row-cols-1 g-5">
+                    <div class="col col-xl-5">
+                        <div class="contact-title-wrapper">
+                            <div class="card contact-title">
+                                <div class="sub-heading">
+                                    <i class="fa-regular fa-circle-dot"></i>
+                                    <span>Reach out to us</span>
+                                </div>
+                                <h2 class="title-heading">Get in Touch</h2>
+                                <p>Connect with us for customized digital strategies that deliver real impact..</p>
+                                <div class="d-flex flex-column flex-md-row align-items-center text-md-start text-center gspace-2">
+                                    <div>
+                                        <a href="https://wa.me/919626626787" target="_blank">
+                                        <div class="icon-wrapper">
+                                            <div class="icon-box">
+                                                <i class="fa-solid fa-phone-volume accent-color"></i>
+                                            </div>
+                                        </div></a>
+                                    </div>
+                                    <div class="d-grid">
+                                        <span>Phone Number</span>
+                                        <h5>+91 9626626787</h5>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column flex-md-row align-items-center text-md-start text-center gspace-2">
+                                    <div>
+                                        <a href="mailto:aeroedgemediahub@gmail.com">
+                                        <div class="icon-wrapper">
+                                            <div class="icon-box">
+                                                <i class="fa-solid fa-envelope accent-color"></i>
+                                            </div>
+                                        </div></a>
+                                    </div>
+                                    <div class="d-grid">
+                                        <span>Email Address</span>
+                                        <h5>aeroedgemediahub@gmail.com</h5>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column flex-md-row align-items-center text-md-start text-center gspace-2">
+                                    <div>
+                                        <div class="icon-wrapper">
+                                            <div class="icon-box">
+                                                <i class="fa-solid fa-location-dot accent-color"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="d-grid">
+                                        <span>Office Address</span>
+                                        <h5> New MRK Bus Stand, 1, Vadalur R.F., Tamil Nadu 607303.</h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col col-xl-7">
+                        <div id="success-message" class="alert success hidden">
+                            <span class="check-icon"><i class="fa-solid fa-2xl fa-check"></i></span>
+                            <p>Thank you! Form submitted successfully.</p>
+                        </div>
+                        
+                        <div id="error-message" class="alert error hidden">
+                            <span class="cross-icon"><i class="fa-solid fa-2xl fa-xmark"></i></span>
+                            <p>Oops! Form submission failed. Please try again.</p>
+                        </div>
+                        <div class="form-layout-wrapper">
+                            <div class="card form-layout">
+                                <h3 class="title-heading">Got a bold vision? Let's turn it into digital reality—together.</h3>
+                                <form action="{% url 'contact_form' %}" method="post" id="contactForm" class="form">
+                                    {% csrf_token %}
+                                    <div class="row row-cols-md-2 row-cols-1 g-3">
+                                        <div class="col">
+                                            <input type="text" name="first_name" id="first-name" placeholder="First Name">
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" name="last_name" id="last-name" placeholder="Last Name">
+                                        </div>
+                                    </div>
+                                    <div class="row row-cols-md-2 row-cols-1 g-3">
+                                        <div class="col">
+                                            <input type="email" name="email" id="email" placeholder="Email Address" required>
+                                        </div>
+                                        <div class="col">
+                                            <input type="text" name="subject" id="subject" placeholder="Subject">
+                                        </div>
+                                    </div>
+                                    <textarea name="message" id="message" rows="5" placeholder="Message"></textarea>
+                                    <div class="form-button-container">
+                                        <button type="submit" class="btn btn-accent">
+                                            <span class="btn-title">
+                                                <span>Send a Message</span>
+                                            </span>
+                                            <span class="icon-circle">
+                                              <i class="fa-solid fa-arrow-right"></i>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Maps -->
+        <div class="section pt-0">
+            <div class="hero-container">
+                
+                <iframe loading="lazy" class="maps overflow-hidden"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d413.5189535951784!2d79.5556578899273!3d11.55498015567837!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a54b7427fbc4ee3%3A0x5a1bad353bef7e4c!2sAero%20Edge%20Media!5e1!3m2!1sen!2sin!4v1757588134270!5m2!1sen!2sin"
+                    title="Vadalur Cuddalore" aria-label="Vadalur, Cuddalore, India">
+                </iframe>
+            </div>
+        </div>
+
+      <!-- WhatsApp Floating Button -->
+<div class="whatsapp-float hidden" id="whatsapp-button">
+  <div class="whatsapp-wrapper">
+    <button class="close-btn" onclick="hideWhatsAppButton(event)">×</button>
+    <span class="chat-text">Chat with us</span>
+    <a href="https://wa.me/919626626787?text=Hi%20I%20am%20interested%20in%20your%20services"
+       target="_blank"
+       rel="noopener noreferrer"
+       aria-label="Chat with us on WhatsApp">
+      <div class="whatsapp-icon-img">
+        <i class="fa-brands fa-whatsapp"></i>
+      </div>
+    </a>
+  </div>
+</div>
+
+    </main>
+
+    <!-- Section Footer -->
+    <footer>
+        {% include 'footer.html' %}
+        <div id="footer"></div>
+    </footer>
+
+   <!-- Vendor JS -->
+    <script src="{% static 'myapp/js/vendor/jquery.min.js' %}"></script>
+    <script src="{% static 'myapp/js/vendor/bootstrap.bundle.min.js' %}"></script>
+    <script src="{% static 'myapp/js/vendor/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'myapp/js/vendor/swiper-bundle.min.js' %}"></script>
+
+    <!-- Core Functional JS -->
+    <script src="{% static 'myapp/js/swiper-script.js' %}"></script>
+    <script src="{% static 'myapp/js/video_embedded.js' %}"></script>
+    <script src="{% static 'myapp/js/themeswitch.js' %}"></script>
+    <script src="{% static 'myapp/js/submit-form.js' %}"></script>
+
+    <!-- Your Main App Script (should be last) -->
+    <script src="{% static 'myapp/js/script.js' %}"></script>
+</body>
+</html>
